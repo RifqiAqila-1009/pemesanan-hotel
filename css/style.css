@@ -1,0 +1,99 @@
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    background-color: white;
+    width: 99%;
+    margin: auto;
+    padding: 10px;
+}
+
+.img-header {
+    display: flex;
+}
+
+.img-header img {
+    width: 100%;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.menu-header a {
+    flex: 1;
+    text-decoration: none;
+    background-color: rgb(170, 170, 170);
+    color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+.menu-header a:hover {
+    background-color: rgb(197, 197, 197);
+    color: white;
+}
+
+.info-container {
+    padding: 50px;
+    background-color: #ffffff;
+}
+  
+.info h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    margin-left: 19%;
+    color: #333;
+}
+  
+.video {
+    margin-top: 30px;
+}
+  
+.description {
+    text-align: center;
+    font-size: 30px;
+    line-height: 1.5;
+    color: #666;
+}
+  
+table {
+    width: 100%;
+}
+  
+td {
+    padding: 10px;
+}
+  
+iframe {
+    border: none;
+}
+
+.logo-hotel {
+    width: 80%;
+    position: absolute;
+    top: -1%;
+    left: 10%;
+}
+
+.logo-hotel img {
+    width: 30%;
+}
+
+footer {
+    background-color: rgb(170, 170, 170);
+    padding: 30px;
+    text-align: center;
+}
+  
+footer h3 {
+    margin: 0;
+    font-size: 18px;
+}

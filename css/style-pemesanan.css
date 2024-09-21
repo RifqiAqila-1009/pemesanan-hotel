@@ -1,0 +1,156 @@
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    background-color: white;
+    width: 99%;
+    margin: auto;
+    padding: 10px;
+}
+
+.img-header {
+    display: flex;
+}
+
+.img-header img {
+    width: 100%;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.menu-header a {
+    flex: 1;
+    text-decoration: none;
+    background-color: rgb(170, 170, 170);
+    color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+.menu-header a:hover {
+    background-color: rgb(197, 197, 197);
+    color: white;
+}
+
+.info-container {
+    padding: 10px;
+}
+
+.form-pemesanan h2 {
+    text-align: center;
+}
+  
+.form-pemesanan form {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+.form-pemesanan label {
+    display: block;
+    margin-bottom: 5px;
+}
+  
+.form-pemesanan input[type="text"],
+input[type="date"], input[type="number"] {
+    width: 97%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-pemesanan select {
+    width: 99%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+  
+.form-pemesanan .radio-checkbox-group {
+    display: flex;
+    align-items: center;
+}
+  
+.form-pemesanan .radio-checkbox-group label {
+    margin-right: 5px;
+}
+  
+.form-pemesanan button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.form-pemesanan .simpan {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.form-pemesanan .cancel {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.logo-hotel {
+    width: 80%;
+    position: absolute;
+    top: -1%;
+    left: 10%;
+}
+
+.logo-hotel img {
+    width: 30%;
+}
+
+footer {
+    background-color: rgb(170, 170, 170);
+    padding: 30px;
+    text-align: center;
+}
+  
+footer h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+

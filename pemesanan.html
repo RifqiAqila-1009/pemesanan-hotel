@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style-pemesanan.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+    <title>Pemesanan Hotel</title>
+</head>
+<body>
+    <div class="main-header">
+        <div class="img-header">
+            <div class="logo-hotel">
+                <img src="css/img/logo-hotel.png" alt="logo">
+            </div> <!-- Logo Hotel -->
+            <img src="css/img/header-hotel.jpeg" alt="#">
+        </div> <!-- img-header -->
+
+        <div class="menu-header">
+            <a href="index.html">Beranda</a>
+            <a href="kamar.html">Kamar</a>
+            <a href="pemesanan.html">Pemesanan</a>
+            <a href="tentang-kami.html">Tentang Kami</a>
+        </div> <!-- menu-header -->
+
+        <div class="info-container">
+            <div class="form-pemesanan">
+                <h2>Formulir Pemesanan Hotel</h2>
+                <br>
+                <form id="form" method="POST" action="php/proses-pemesanan.php">
+                    <label for="namaPemesan">Nama Pemesan:</label>
+                    <input type="text" name="namaPemesan" id="namaPemesan" required>
+                    <br> <!-- Nama Pemesan --> <br>
+
+                    <div class="radio-checkbox-group">
+                    <label for="jenisKelamin">Jenis Kelamin:</label>
+                    <input type="radio" id="laki" name="jenisKelamin" value="Laki-laki"> Laki-laki
+                    <input type="radio" id="perempuan" name="jenisKelamin" value="perempuan"> Perempuan
+                    </div> <!-- radio --> <br>
+
+                    <label for="nomorIdentitas">Nomor Identitas (16 digit):</label>
+                    <input type="number" name="nomorIdentitas" id="nomorIdentitas" onblur="validasiNomorIdentitas()" required>
+                    <br> <!-- Nomor Identitas --> <br>
+
+                    <label for="tipeKamar">Tipe Kamar:</label>
+                    <select id="tipeKamar" name="tipeKamar" onchange="updateHarga()">
+                        <option value="Standar">Standar</option>
+                        <option value="Deluxe">Deluxe</option>
+                        <option value="Family">Family</option>
+                    </select>
+                    <br> <!-- Tipe Kamar --> <br>
+
+                    <label for="harga">Harga Kamar:</label>
+                    <input type="text" name="harga" id="harga" readonly>
+                    <br> <!-- Harga Kamar --> <br>
+
+                    <label for="tanggalPesan">Tanggal Pesan:</label>
+                    <input type="date" name="tanggalPesan" id="tanggalPesan" required>
+                    <br> <!-- Tanggal Pemesanan --> <br>
+
+                    <label for="durasi">Durasi Menginap (hari):</label>
+                    <input type="number" name="durasi" id="durasi" onblur="validasiDurasi()" required>
+                    <br> <!-- Durasi per malam --> <br>
+
+                    <div class="radio-checkbox-group">
+                    <label for="breakfast">Termasuk Breakfast:</label>
+                    <input type="checkbox" name="breakfast" id="breakfast" value="Ya">Ya
+                    </div> <!-- Check Box --> <br>
+
+                    <label for="totalBayar">Total Bayar:</label>
+                    <input type="text" name="totalBayar" id="totalBayar" readonly>
+                    <br> <!-- Total Bayar --> <br>
+
+                    <button type="button" onclick="hitungTotal()">Hitung Total Bayar</button>
+                    <button type="submit" class="simpan" name="Simpan">Simpan</button>
+                    <button type="button" onclick="reviewForm()">Review Pemesanan</button>
+                    <a href="pemesanan.html" class="cancel">Cancel</a>
+                </form>
+
+                <!-- Modal for review -->
+                <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="reviewModalLabel">Review Pemesanan</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div> <!-- Modal Header -->
+                            <div class="modal-body">
+                                <p><strong>Nama Pemesan : </strong> <span id="reviewnamaPemesan"></span></p>
+                                <p><strong>Jenis Kelamin : </strong> <span id="reviewjenisKelamin"></span></p>
+                                <p><strong>Nomor Identitas : </strong> <span id="reviewnomorIdentitas"></span></p>
+                                <p><strong>Tipe Kamar : </strong> <span id="reviewtipeKamar"></span></p>
+                                <p><strong>Harga Kamar : </strong> <span id="reviewharga"></span></p>
+                                <p><strong>Tanggal Pemesanan : </strong> <span id="reviewtanggalPeminjaman"></span></p>
+                                <p><strong>Durasi Penginapan : </strong> <span id="reviewdurasi"></span></p>
+                                <p><strong>Breakfast : </strong> <span id="reviewbreakfast"></span></p>
+                                <p><strong>Total Bayar : </strong> <span id="reviewtotalBayar"></span></p>
+                            </div> <!-- Modal Body -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</button>
+                            </div> <!-- Modal Footer -->
+                        </div> <!-- Modal Content -->
+                    </div> <!-- Modal Dialog -->
+                </div> <!-- Review Form-->
+
+            </div> <!-- form-pemesanan -->
+        </div> <!-- info-container -->
+
+    </div> <!-- main-header -->
+
+    <script src="js/script-pemesanan.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+
+    <footer>
+        <h3>Copyright &copy; 2024 Cloud Nine Hotel</h3>
+    </footer>
+</body>
+</html>
